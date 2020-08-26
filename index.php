@@ -1,4 +1,7 @@
 <?php
+
+require_once('vendor/autoload.php');
+
 // Le fichier de config
 include_once('config.php');
 
@@ -30,7 +33,10 @@ if ($params[0] != "") {
         unset($params[1]);
 
         // On appelle la méthode $action du contrôleur $controller
-        call_user_func_array([$controller,$action], $params);
+        call_user_func_array([$controller, $action], $params);
+
+        $bonjour = New Jur\Bonjour("Salut je suis la class Bonjour");
+        echo($bonjour->getBonjour());
     } else {
         // On envoie le code réponse 404
         http_response_code(404);
