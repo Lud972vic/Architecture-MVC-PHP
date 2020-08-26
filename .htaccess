@@ -1,0 +1,12 @@
+#Permet de démarrer la réécriture d'URL
+RewriteEngine On
+
+#Permet de définir une règle de réécriture d'URL et fonctionne comme suit
+#^([a-zA-Z0-9\-\_\/]*)$ : il s'agit des différents caractères pris en compte dans l'URL pour sa réécriture
+#a-z : caractères minuscules
+#A-Z : caractères majuscules
+#0-9 : chiffres
+#\-\_\/ : tiret, underscore et / (caractère \ pour l'échappement)
+#Tout ceci entre ^( pour le début de chaîne et )$ pour la fin de chaîne
+#index.php?p=$1 : $1 contiendra le résultat de la réécriture notre chaîne
+RewriteRule ^([a-zA-Z0-9\-\_\/]*)$ index.php?p=$1
